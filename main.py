@@ -23,3 +23,8 @@ async def user(user: None, db: db_dependancy):
     if user is None:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="User not authenticated")
     return {"message": f"Hello, {user}!"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
